@@ -23,13 +23,19 @@
 	--sidebar-w: 270px;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; color-scheme: dark; }
 body {
 	margin: 0;
 	background: var(--bg);
 	color: var(--text);
 	font: 16px/1.65 "Inter", system-ui, sans-serif;
+	scrollbar-width: thin;
+	scrollbar-color: var(--border) var(--bg);
 }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--bg); }
+*::-webkit-scrollbar-thumb { background: var(--border); border-radius: 6px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
 
 /* ---- sidebar ---- */
 nav#sidebar {
