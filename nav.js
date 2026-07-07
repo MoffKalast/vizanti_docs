@@ -1,19 +1,17 @@
 // Sidebar structure. To add a page: create pages/<id>.md and add an entry here.
 const NAV = [
 	{
-		group: "/getting_started",
+		group: "/overview",
 		pages: [
 			{ id: "getting-started", title: "Getting Started" },
-			{ id: "installation", title: "Installation & Support" },
 			{ id: "configuration", title: "Configuration" },
-			{ id: "demo-videos", title: "Demo Videos" },
-			{ id: "faq", title: "Tips & FAQ" }
+			{ id: "faq", title: "Tips & FAQ" },
+			{ id: "feature-list", title: "Feature List" }
 		]
 	},
 	{
 		group: "/general_tools",
 		pages: [
-			{ id: "general-tools/overview", title: "Overview" },
 			{ id: "general-tools/global-settings", title: "Global Settings" },
 			{ id: "general-tools/rosbridge", title: "Rosbridge" },
 			{ id: "general-tools/grid", title: "Grid" },
@@ -29,7 +27,6 @@ const NAV = [
 	{
 		group: "/mission_planning",
 		pages: [
-			{ id: "mission-planning/overview", title: "Overview" },
 			{ id: "mission-planning/teleop-joystick", title: "Teleop Joystick" },
 			{ id: "mission-planning/pose-estimate", title: "2D Pose Estimate" },
 			{ id: "mission-planning/nav-goal", title: "2D Nav Goal" },
@@ -42,7 +39,6 @@ const NAV = [
 	{
 		group: "/data_visualization",
 		pages: [
-			{ id: "data-visualization/overview", title: "Overview" },
 			{ id: "data-visualization/attitude-indicator", title: "Attitude Indicator" },
 			{ id: "data-visualization/pose-tracker", title: "Pose Tracker" },
 			{ id: "data-visualization/map", title: "Map" },
@@ -63,6 +59,11 @@ const NAV = [
 	}
 ];
 
-const DEFAULT_PAGE = "getting-started";
+// Pages routable but not shown in the sidebar
+const HIDDEN_PAGES = [
+	{ id: "index", title: "Introduction" }
+];
+
+const DEFAULT_PAGE = "index";
 const SITE_TITLE = "Vizanti Docs";
 const REPO_URL = "https://github.com/MoffKalast/vizanti";

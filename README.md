@@ -14,7 +14,7 @@ _Except where otherwise noted, this documentation is licensed under the BSD 3-Cl
 ## Adding a page
 
 1. Create `pages/my-page.md` (or `pages/widgets/my-widget.md`)
-2. Add `{ id: "my-page", title: "My Page" }` to the appropriate group in `nav.js`
+2. Add `{ id: "my-page", title: "My Page" }` to the appropriate group in `nav.js` (or to `HIDDEN_PAGES` for pages routable but not listed in the sidebar, like the landing page `pages/index.md`)
 
 Internal links between pages just use relative markdown paths (`[link](configuration.md)`, `[link](widgets/waypoints.md)`) and are rewritten to hash routes automatically.
 

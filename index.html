@@ -217,7 +217,7 @@ main pre code { background: none; border: 0; padding: 0; }
 const sidebar = document.getElementById("sidebar");
 const content = document.getElementById("content");
 const menuBtn = document.getElementById("menu-btn");
-const flatPages = NAV.flatMap(g => g.pages);
+const flatPages = HIDDEN_PAGES.concat(NAV.flatMap(g => g.pages));
 
 function buildSidebar() {
 	let html = `<div class="brand"><a href="#${DEFAULT_PAGE}"><img src="assets/icon/icon.svg" alt="">Vizanti <span>Docs</span></a></div>`;
