@@ -1,14 +1,24 @@
-# <img src="assets/icon/icon.svg" width="42"/> Vizanti — Web Visualizer & Mission Planner for ROS
+# Vizanti <img src="assets/icon/icon.svg" width="42"/> 
 
-Vizanti is a web-based visualization and control tool developed for more convenient operation of outdoor robots running the Robot Operating System (ROS). The application attempts to replicate RViz's orthographic 2D view as closely as possible with a smartphone friendly interface. The second goal is to allow planning and executing movement and mission commands, i.e. goals and waypoints, with custom buttons and parameter reconfigure.
+## Web Visualizer & Mission Planner for ROS
 
-![Vizanti preview](assets/icon/preview.jpg)
+![Vizanti preview](assets/screenshots/preview.jpg)
 
-As a field tool, Vizanti is designed to operate just as well without internet access, and as such the intended way is to host it on a robot, with rosbridge autoconnecting to the host IP.
+Vizanti is a web-based ground control station providing visualization and control any ROS or ROS 2 enabled robot. 
+
+It replicates replicate RViz's orthographic 2D view in a familiar way with a smartphone friendly interface, and extends it with satelite imagery, mission planning, joystick+keyboard teleoperation, node management and parameter reconfigure.
+
+The project is open-source source and BSD licensed, so feel free to contribute and modify it for your use case.
+
+![Vizanti preview](assets/screenshots/asv_ui_demo.jpg)
+
+Initially designed as a field tool for marine robotics, Vizanti is equipped to operate with or without internet access, and as such the most practical way is often to host it on the robot itself and connecting mobile or desktop devices over wifi.
 
 - **[Getting Started](getting-started.md)** — installation and first steps
 - **[Feature List](feature-list.md)** — every widget at a glance
 - **[Tips & FAQ](faq.md)** — common usage and setup questions
+
+![Vizanti preview](assets/screenshots/nav2_pc2_jag.jpg)
 
 ## Demo Videos
 
@@ -20,7 +30,3 @@ List of instructional and not so instructional videos that showcase features and
 | [![Pond Test](https://img.youtube.com/vi/uXDBWc23ZdQ/0.jpg)](https://www.youtube.com/watch?v=uXDBWc23ZdQ) | GNSS navigation demo (Chrome PWA, Android) using [Tuna](https://github.com/MoffKalast/tuna) |
 | [![Pond Nav](https://img.youtube.com/vi/NZO6q_YMRwI/0.jpg)](https://youtu.be/NZO6q_YMRwI?feature=shared&t=91) | GNSS survey pattern test (Chrome PWA, Android) |
 | [![Long range Nav](https://img.youtube.com/vi/V_BqTKp-Z5E/0.jpg)](https://youtu.be/V_BqTKp-Z5E?feature=shared&t=1286) | GNSS sonar sensors (Chrome PWA, Android), long range nav bag review (Chrome, Windows) |
-
-Nav2 Navigate through poses, using [path_to_nav2poses.py](https://github.com/MoffKalast/vizanti/blob/ros2/vizanti_demos/scripts/path_to_nav2poses.py):
-
-![nav2 poses demo](https://github.com/MoffKalast/vizanti/assets/9977799/f714dfc7-00ee-4580-bc05-b18d0117c496)

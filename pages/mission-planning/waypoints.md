@@ -8,6 +8,8 @@ The Waypoints widget is simpler than it might first appear. It lets you pick a f
 
 On the ROS 2 side, there are two example nodes for Nav2 in [vizanti_demos](https://github.com/MoffKalast/vizanti/tree/ros2/vizanti_demos/scripts) that turn the Path into either a sequence of NavigateToPose calls or one NavigateThroughPoses. On the ROS 1 side, an example is the [line_planner](https://github.com/MoffKalast/line_planner) which subscribes to a Path directly.
 
+![nav2 poses demo](https://github.com/MoffKalast/vizanti/assets/9977799/f714dfc7-00ee-4580-bc05-b18d0117c496)
+
 ## General behaviour
 
 - <img src="assets/dropdown_start.svg" width="22"/> **Start** → sends the currently defined waypoints, the yaw rotation at each pointing towards the next one
@@ -28,3 +30,28 @@ More info:
 
 - https://github.com/MoffKalast/vizanti/issues/111
 - https://github.com/MoffKalast/vizanti/pull/135
+
+
+## Recreate a trajectory
+
+There is a pattern that involves the Pose Tracker widget, that allows for capturing a robot's path, exporting and loading it as a waypoint mission:
+
+1. Set up a tracker and capture a trajectory:
+
+![posetracker_path](assets/screenshots/posetracker_path.jpg)
+
+2. Export trajectory to CSV:
+
+![posetracker_save](assets/screenshots/posetracker_save.jpg)
+
+3. Load trajectory in Waypoints:
+
+![waypoints_load](assets/screenshots/waypoints_load.jpg)
+
+4. Refine or remove points:
+
+![waypoints_path](assets/screenshots/waypoints_path.jpg)
+
+5. ????
+
+6. Profit.

@@ -4,6 +4,8 @@
 
 A button with customizable text that displays the last message sent on a Bool topic and sends the inverse to toggle it when pressed. Also supports just sending messages to an Empty topic. Long press to open setup menu.
 
+![Render](assets/screenshots/button.jpg)
+
 ## The Bool state pattern
 
 There is a nifty programming pattern that lets you utilize a single `std_msgs/Bool` topic for both robust state indication and state change when using the Button widget.
