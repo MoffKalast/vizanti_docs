@@ -8,7 +8,7 @@ The Waypoints widget is simpler than it might first appear. It lets you pick a f
 
 On the ROS 2 side, there are two example nodes for Nav2 in [vizanti_demos](https://github.com/MoffKalast/vizanti/tree/ros2/vizanti_demos/scripts) that turn the Path into either a sequence of NavigateToPose calls or one NavigateThroughPoses. On the ROS 1 side, an example is the [line_planner](https://github.com/MoffKalast/line_planner) which subscribes to a Path directly.
 
-![nav2 poses demo](https://github.com/MoffKalast/vizanti/assets/9977799/f714dfc7-00ee-4580-bc05-b18d0117c496)
+![nav2 poses demo](assets/screenshots/nav2poses.gif)
 
 ## General behaviour
 

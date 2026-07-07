@@ -7,7 +7,6 @@ Joystick used for publishing Twist messages, can be positioned anywhere on the s
 <video controls width="800"><source src="assets/video/joystick.mp4" type="video/mp4">  Your browser does not support the video tag.</video>
 
 
-
 Keyboard control can be enabled on top of the existing thumbstick, with remappable keys:
 
 ![Render](assets/screenshots/keybindings.jpg)
