@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vizanti Docs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<style>
+:root {
+	--bg: #131519;
+	--panel: #1a1d23;
+	--border: #2a2e36;
+	--text: #d6d9de;
+	--muted: #8b919c;
+	--accent: #56b6a6;
+	--accent-dim: #3a7a70;
+	--code-bg: #1e2127;
+	--sidebar-w: 270px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font: 16px/1.65 "Inter", system-ui, sans-serif;
+}
+
+/* ---- sidebar ---- */
+nav#sidebar {
+	position: fixed;
+	top: 0; left: 0; bottom: 0;
+	width: var(--sidebar-w);
+	background: var(--panel);
+	border-right: 1px solid var(--border);
+	overflow-y: auto;
+	padding: 20px 0 40px;
+}
+#sidebar .brand {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	padding: 0 20px 16px;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: 12px;
+}
+#sidebar .brand a {
+	font: 700 20px "JetBrains Mono", monospace;
+	color: var(--text);
+	text-decoration: none;
+	letter-spacing: 0.5px;
+}
+#sidebar .brand span { color: var(--accent); }
+#sidebar .brand .ver {
+	font: 400 11px "JetBrains Mono", monospace;
+	color: var(--muted);
+}
+#sidebar .group {
+	font: 600 12px "JetBrains Mono", monospace;
+	color: var(--accent-dim);
+	padding: 18px 20px 6px;
+	letter-spacing: 0.5px;
+	user-select: none;
+}
+#sidebar a.page {
+	display: block;
+	padding: 6px 20px 6px 28px;
+	color: var(--muted);
+	text-decoration: none;
+	font-size: 14.5px;
+	border-left: 2px solid transparent;
+	transition: color 0.12s, border-color 0.12s;
+}
+#sidebar a.page:hover { color: var(--text); }
+#sidebar a.page.active {
+	color: var(--accent);
+	border-left-color: var(--accent);
+	background: rgba(86, 182, 166, 0.06);
+}
+#sidebar .repo-link {
+	display: block;
+	margin: 24px 20px 0;
+	padding-top: 16px;
+	border-top: 1px solid var(--border);
+	color: var(--muted);
+	font: 400 12.5px "JetBrains Mono", monospace;
+	text-decoration: none;
+}
+#sidebar .repo-link:hover { color: var(--accent); }
+
+/* ---- content ---- */
+main {
+	margin-left: var(--sidebar-w);
+	padding: 48px 56px 96px;
+	max-width: 880px;
+}
+main h1, main h2, main h3, main h4 {
+	font-family: "JetBrains Mono", monospace;
+	line-height: 1.3;
+	margin: 1.6em 0 0.6em;
+}
+main h1 { font-size: 30px; margin-top: 0; }
+main h2 { font-size: 22px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+main h3 { font-size: 17px; }
+main h1:first-child { margin-top: 0; }
+main a { color: var(--accent); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+main img { max-width: 100%; border-radius: 4px; }
+main hr { border: 0; border-top: 1px solid var(--border); margin: 32px 0; }
+main blockquote {
+	margin: 16px 0;
+	padding: 10px 18px;
+	border-left: 3px solid var(--accent);
+	background: var(--panel);
+	color: var(--muted);
+	border-radius: 0 4px 4px 0;
+}
+main table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 16px 0;
+	font-size: 14.5px;
+	display: block;
+	overflow-x: auto;
+}
+main th, main td {
+	border: 1px solid var(--border);
+	padding: 8px 12px;
+	text-align: left;
+	vertical-align: top;
+}
+main th {
+	background: var(--panel);
+	font-family: "JetBrains Mono", monospace;
+	font-size: 13px;
+}
+main td img { max-width: 48px; vertical-align: middle; }
+main code {
+	font: 13.5px "JetBrains Mono", monospace;
+	background: var(--code-bg);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 1px 6px;
+}
+main pre {
+	background: var(--code-bg);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 14px 18px;
+	overflow-x: auto;
+}
+main pre code { background: none; border: 0; padding: 0; }
+
+/* prev/next footer */
+.pagenav {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 64px;
+	padding-top: 20px;
+	border-top: 1px solid var(--border);
+	font: 600 14px "JetBrains Mono", monospace;
+}
+.pagenav a {
+	color: var(--muted);
+	text-decoration: none;
+	padding: 10px 14px;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	max-width: 48%;
+}
+.pagenav a:hover { color: var(--accent); border-color: var(--accent-dim); }
+.pagenav .next { margin-left: auto; text-align: right; }
+
+/* ---- mobile ---- */
+#menu-btn {
+	display: none;
+	position: fixed;
+	top: 12px; right: 12px;
+	z-index: 20;
+	background: var(--panel);
+	border: 1px solid var(--border);
+	color: var(--text);
+	font: 600 14px "JetBrains Mono", monospace;
+	padding: 8px 14px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+@media (max-width: 860px) {
+	#menu-btn { display: block; }
+	nav#sidebar { transform: translateX(-100%); transition: transform 0.2s; z-index: 15; }
+	nav#sidebar.open { transform: none; box-shadow: 0 0 40px rgba(0,0,0,0.6); }
+	main { margin-left: 0; padding: 56px 20px 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	nav#sidebar { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<button id="menu-btn" aria-label="Toggle navigation">menu</button>
+<nav id="sidebar"></nav>
+<main id="content"><p style="color:var(--muted)">Loading…</p></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="nav.js"></script>
+<script>
+const sidebar = document.getElementById("sidebar");
+const content = document.getElementById("content");
+const menuBtn = document.getElementById("menu-btn");
+const flatPages = NAV.flatMap(g => g.pages);
+
+function buildSidebar() {
+	let html = `<div class="brand"><a href="#${DEFAULT_PAGE}">vizanti<span>_docs</span></a></div>`;
+	for (const g of NAV) {
+		html += `<div class="group">${g.group}</div>`;
+		for (const p of g.pages) html += `<a class="page" data-id="${p.id}" href="#${p.id}">${p.title}</a>`;
+	}
+	html += `<a class="repo-link" href="${REPO_URL}" target="_blank" rel="noopener">↗ github.com/MoffKalast/vizanti</a>`;
+	sidebar.innerHTML = html;
+}
+
+function currentPageId() {
+	const id = decodeURIComponent(location.hash.slice(1)).split("?")[0];
+	return flatPages.some(p => p.id === id) ? id : DEFAULT_PAGE;
+}
+
+function pageNavHtml(id) {
+	const i = flatPages.findIndex(p => p.id === id);
+	let html = `<div class="pagenav">`;
+	if (i > 0) html += `<a href="#${flatPages[i-1].id}">← ${flatPages[i-1].title}</a>`;
+	if (i < flatPages.length - 1) html += `<a class="next" href="#${flatPages[i+1].id}">${flatPages[i+1].title} →</a>`;
+	return html + `</div>`;
+}
+
+async function loadPage() {
+	const id = currentPageId();
+	const page = flatPages.find(p => p.id === id);
+	document.title = `${page.title} — ${SITE_TITLE}`;
+	sidebar.querySelectorAll("a.page").forEach(a => a.classList.toggle("active", a.dataset.id === id));
+	sidebar.classList.remove("open");
+	try {
+		const res = await fetch(`pages/${id}.md`);
+		if (!res.ok) throw new Error(res.status);
+		content.innerHTML = marked.parse(await res.text()) + pageNavHtml(id);
+	} catch (e) {
+		content.innerHTML = `<h1>Page not found</h1><p>Couldn't load <code>pages/${id}.md</code>. Check that the file exists and is listed in <code>nav.js</code>.</p>`;
+		return;
+	}
+	// rewrite internal .md links into hash routes, resolved relative to the current page's directory
+	const baseDir = id.includes("/") ? id.slice(0, id.lastIndexOf("/") + 1) : "";
+	content.querySelectorAll("a[href$='.md']").forEach(a => {
+		const href = a.getAttribute("href");
+		if (/^https?:/.test(href)) return;
+		const parts = (baseDir + href.replace(/\.md$/, "")).split("/").filter(s => s !== ".");
+		const resolved = [];
+		for (const p of parts) p === ".." ? resolved.pop() : resolved.push(p);
+		a.href = "#" + resolved.join("/");
+	});
+	content.querySelectorAll("pre code").forEach(el => hljs.highlightElement(el));
+	window.scrollTo(0, 0);
+}
+
+menuBtn.onclick = () => sidebar.classList.toggle("open");
+window.addEventListener("hashchange", loadPage);
+buildSidebar();
+loadPage();
+</script>
+</body>
+</html>
