@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vizanti Docs</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon/32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/16.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/icon/152.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -78,6 +81,17 @@ nav#sidebar {
 	transition: color 0.12s, border-color 0.12s;
 }
 #sidebar a.page:hover { color: var(--text); }
+#sidebar a.page img {
+	width: 20px;
+	height: 20px;
+	flex: none;
+	opacity: 0.85;
+}
+#sidebar a.page.with-icon {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+}
 #sidebar a.page.active {
 	color: var(--accent);
 	border-left-color: var(--accent);
@@ -223,7 +237,10 @@ function buildSidebar() {
 	let html = `<div class="brand"><a href="#${DEFAULT_PAGE}"><img src="assets/icon/icon.svg" alt="">Vizanti <span>Docs</span></a></div>`;
 	for (const g of NAV) {
 		html += `<div class="group">${g.group}</div>`;
-		for (const p of g.pages) html += `<a class="page" data-id="${p.id}" href="#${p.id}">${p.title}</a>`;
+		for (const p of g.pages) {
+			const icon = p.icon ? `<img src="assets/${p.icon}" alt="">` : "";
+			html += `<a class="page${p.icon ? " with-icon" : ""}" data-id="${p.id}" href="#${p.id}">${icon}${p.title}</a>`;
+		}
 	}
 	html += `<a class="repo-link" href="${REPO_URL}" target="_blank" rel="noopener">↗ github.com/MoffKalast/vizanti</a>`;
 	sidebar.innerHTML = html;
