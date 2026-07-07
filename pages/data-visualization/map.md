@@ -11,8 +11,11 @@ It features the typical rviz render modes: Map, Costmap, Raw, as well as two ext
 
 The raw+transparency mode has proven to be very useful for registering sonar imagery:
 
-Sidescan:
+Sidescan (raw with black transparency):
 ![Render](assets/screenshots/sidescan.jpg)
 
-FLS:
-![Render](assets/screenshots/fls.jpg)
+FLS (raw with black transparency):
+<video controls width="800"><source src="assets/video/fish.mp4" type="video/mp4">  Your browser does not support the video tag.</video>
+
+FLS (raw):
+![Render](assets/screenshots/oculus3.jpg)

@@ -21,6 +21,7 @@ const NAV = [
 			{ id: "general-tools/bag-recorder", title: "Bag Recorder", icon: "rosbag.svg" },
 			{ id: "general-tools/node-manager", title: "Node Manager", icon: "nodemgr.svg" },
 			{ id: "general-tools/topic-inspector", title: "Topic Inspector", icon: "inspector.svg" },
+			{ id: "general-tools/folder", title: "Folder", icon: "folder.svg" },
 			{ id: "general-tools/add-widget", title: "Add Widget", icon: "add.svg" }
 		]
 	},

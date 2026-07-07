@@ -5,10 +5,8 @@
 
 Display satellite imagery, by default from OpenStreetMap. Requires a NavSatFix origin with the correct frame in its header.
 
-<video controls width="800">
-  <source src="https://private-user-images.githubusercontent.com/9977799/614269576-35f2c983-d891-4b22-91ae-791d4c9cd99f.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODM0NDUzMDYsIm5iZiI6MTc4MzQ0NTAwNiwicGF0aCI6Ii85OTc3Nzk5LzYxNDI2OTU3Ni0zNWYyYzk4My1kODkxLTRiMjItOTFhZS03OTFkNGM5Y2Q5OWYubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDcwNyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA3MDdUMTcyMzI2WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MDBhY2Q3MzRkYmExOGFhNDlhNGEyNjRlNWM0ZDI0YjZkNTM5ZGNhNjBjNDkzNzE2MTIyN2MzZmI2YjQwMDRmNyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPXZpZGVvJTJGbXA0In0.5sX1DfO-N4JIdTzkfzJ77y4FsC6lJvxS0CIZJhVUaQM" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<video controls width="800"><source src="assets/video/satelite.mp4" type="video/mp4">  Your browser does not support the video tag.</video>
+
 
 ## About Projections
 

@@ -19,6 +19,7 @@ Aside from the required ones, custom widgets can be added to the navbar to custo
 | <img src="assets/rosbag.svg" width="30"/> | [Bag Recorder](general-tools/bag-recorder.md) | — | Records specified topics by calling `rosbag record` via proxy. |
 | <img src="assets/nodemgr.svg" width="30"/> | [Node Manager](general-tools/node-manager.md) | — | Launch nodes, kill nodes, see information about nodes and run other node debugging tools. |
 | <img src="assets/inspector.svg" width="30"/> | [Topic Inspector](general-tools/topic-inspector.md) | — | A raw text visualizer for topic data, and publisher/subscriber info analogous to `rostopic echo` and `rostopic info`. |
+| <img src="assets/folder.svg" width="30"/> | [Folder](general-tools/folder.md) | — | A way to group widgets together. |
 | <img src="assets/add.svg" width="30"/> | [Add New Visualizer/Widget](general-tools/add-widget.md) | — | Self explanatory. |
 
 ## Mission Planning
