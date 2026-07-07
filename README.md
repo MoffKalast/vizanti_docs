@@ -9,6 +9,7 @@ _Except where otherwise noted, this documentation is licensed under the BSD 3-Cl
 - `index.html` — the entire site shell (sidebar, styling, markdown rendering via marked.js, syntax highlighting via highlight.js)
 - `nav.js` — sidebar structure, the only file to touch when adding/reordering pages
 - `pages/*.md` — the content, plain GitHub-flavored markdown
+- `assets/` — icons and images from the Vizanti client, referenced as `assets/<name>.svg` from any page
 
 ## Adding a page
 

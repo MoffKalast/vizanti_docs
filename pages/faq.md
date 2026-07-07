@@ -8,7 +8,7 @@ Most widget icons open their setup menus with a click, but some require a long p
 
 Make sure the browser didn't autocorrect your URL to `https://` instead of `http://` which won't get a response from the static serve in its default configuration. If that doesn't help, check if ufw is disabled on the host machine or the network isn't blocking port 5000 and 5001 from it through some other means.
 
-## Changing the fixed frame
+## <img src="assets/tf.svg" width="26"/> Changing the fixed frame
 
 Check the Global Settings widget and select any of the currently known TF frames in the dropdown.
 
@@ -22,8 +22,12 @@ See the [Configuration](configuration.md) page.
 
 ## How to use the satellite tile renderer?
 
-See the dedicated [Satellite Tiles](widgets/satellite-tiles.md) page.
+See the dedicated [Satellite Tiles](data-visualization/satellite-tiles.md) page.
 
 ## How to send waypoint missions?
 
-See the dedicated [Waypoint Missions](widgets/waypoints.md) page.
+See the dedicated [Waypoint Missions](mission-planning/waypoints.md) page.
+
+## How does the Button state pattern work?
+
+See the dedicated [Button](mission-planning/button.md) page.
