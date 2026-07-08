@@ -66,17 +66,20 @@ For a pixel-exact match with the renderer, project on the backend with pyproj's 
 ```python
 from pyproj import Transformer
 
-lat0, lon0, alt0 = 46.05, 14.51, 300.0  # from an origin NavSatFix
+lat0, lon0, alt0 = # from an origin NavSatFix, receivers typically return WGS84
 pipeline = (
 	f"+proj=pipeline "
 	f"+step +proj=cart +ellps=WGS84 "
 	f"+step +proj=topocentric +ellps=WGS84 +lat_0={lat0} +lon_0={lon0} +h_0={alt0}"
 )
-lla_to_enu = Transformer.from_pipeline(pipeline)
-east, north, up = lla_to_enu.transform(lon, lat, alt, radians=False)
-```
+enu_transformer = Transformer.from_pipeline(pipeline)
 
-`+proj=tmerc` (a local transverse Mercator) is also a common and perfectly workable choice: it agrees with topocentric ENU to sub-centimeter near the origin. It does however carry a scale distortion growing quadratically with distance east/west of the origin meridian — roughly 1.2 cm at 1 km, 1.2 m at 10 km — so on a large site with high-precision RTK, prefer the topocentric pipeline. On typical robot scales the difference is invisible.
+#LLA to ENU
+east, north, up = enu_transformer.transform(lon, lat, alt)
+
+#ENU to LLA
+lon, lat, alt = enu_transformer.transform(east, north, up, direction=TransformDirection.INVERSE)
+```
 
 ## Pitfalls
 
