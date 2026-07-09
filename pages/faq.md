@@ -6,7 +6,7 @@ Most widget icons open their setup menus with a click, but some require a long p
 
 ## The web client doesn't load on other machines, but works on localhost?
 
-Make sure the browser didn't autocorrect your URL to `https://` instead of `http://` which won't get a response from the static serve in its default configuration. If that doesn't help, check if ufw is disabled on the host machine or the network isn't blocking port 5000 and 5001 from it through some other means.
+Make sure the browser didn't autocorrect your URL to `https://` instead of `http://` which won't get a response from the static serve in its default configuration. If that doesn't help, check if ufw is disabled on the host machine or the network isn't blocking port 5000 and 5001 from it through some other means. If you're using a mobile device connected to a robot's hotspot that doesn't have internet access, make sure to turn off mobile data. That should prevent any routing confusion.
 
 ## <img src="assets/tf.svg" width="26"/> Changing the fixed frame
 
