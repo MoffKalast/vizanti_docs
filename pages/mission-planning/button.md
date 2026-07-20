@@ -2,7 +2,9 @@
 
 **Message types:** `std_msgs/Bool`, `std_msgs/Empty`
 
-A button with customizable text that displays the last message sent on a Bool topic and sends the inverse to toggle it when pressed. Also supports just sending messages to an Empty topic. Long press to open setup menu.
+> 👉 Long press to open the setup menu.
+
+A button with customizable text that displays the last message sent on a Bool topic and sends the inverse to toggle it when pressed. Also supports just sending messages to an Empty topic.
 
 ![Render](assets/screenshots/button.jpg)
 

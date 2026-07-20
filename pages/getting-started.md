@@ -25,6 +25,17 @@ Check the [Feature List](feature-list.md) for a rundown of everything available,
 
 See the [Tips & FAQ](faq.md) for common usage and setup questions.
 
+## ROS 1 / 2 differences to watch for
+
+The web client is nearly identical across branches and kept up to date on both branches, but a few tools depend on the underlying ROS distro and behave differently depending on which one you're on:
+
+- **Backend:** ROS 1 uses rosbridge. ROS 2 uses it by default too, but throughput is lower and CPU usage higher, so the rclcpp RWS backend (see the ROS 2 branch readme) is recommended there. RWS is ROS 2 only and has its quirks too, be sure to check if it fits your use case.
+- **Param Reconfigure:** works through dynamic_reconfigure on Noetic/One, and plain node parameters on ROS 2. Most ROS 2 nodes do not provide parameter descriptions that were mandatory under dynamic_reconfigure, so that's not rendered at the moment.
+- **Node Manager:** run types are `rosrun`/`roslaunch` vs `ros2 run`/`ros2 launch`, diagnostics are `roswtf` vs `ros2 doctor`. Lifecycle status and the "killed node lingers in the list" quirk are ROS 2 only.
+- **Map save/load:** relies on `map_server` being installed on ROS 1 and `nav2_map_server` on ROS 2.
+- **Bag Recorder:** calls `rosbag record` vs `ros2 bag record`.
+
+
 ## ROS distro support
 
 | Setup                | Noetic (ROS&nbsp;1) | One (ROS&nbsp;1) | Humble (ROS&nbsp;2) | Jazzy (ROS&nbsp;2) | Lyrical (ROS&nbsp;2) |

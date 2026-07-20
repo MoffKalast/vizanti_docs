@@ -2,4 +2,9 @@
 
 **Message type:** `geometry_msgs/PoseWithCovarianceStamped`
 
-Display a PoseWithCovarianceStamped message. The covariance rendering is currently experimental and will likely only display correctly for spherical covariance.
+Renders a single pose together with its uncertainty. Typical sources are an AMCL best-estimate pose (`/amcl_pose`), or a GNSS pose.
+
+## Render modes
+
+- **Long Arrow** — position plus a heading arrow
+- **Axes** — an XYZ axis marker at the pose
