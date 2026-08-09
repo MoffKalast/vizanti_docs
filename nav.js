@@ -32,6 +32,7 @@ const NAV = [
 			{ id: "mission-planning/pose-estimate", title: "2D Pose Estimate", icon: "initialpose.svg" },
 			{ id: "mission-planning/nav-goal", title: "2D Nav Goal", icon: "simplegoal.svg" },
 			{ id: "mission-planning/waypoints", title: "Waypoint Mission", icon: "waypoints.svg" },
+			{ id: "mission-planning/survey", title: "Survey Mission", icon: "survey.svg" },
 			{ id: "mission-planning/area-mission", title: "Area Mission", icon: "area.svg" },
 			{ id: "mission-planning/button", title: "Button", icon: "button.svg" },
 			{ id: "mission-planning/altimeter", title: "Altimeter", icon: "altimeter_green.svg" }

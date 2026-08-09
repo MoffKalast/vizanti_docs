@@ -6,8 +6,6 @@ Joystick for publishing Twist (or TwistStamped) commands. It can be positioned a
 
 <video controls width="800"><source src="assets/video/joystick.mp4" type="video/mp4">  Your browser does not support the video tag.</video>
 
-
-
 ## Presets
 
 The **Apply preset** dropdown fills in the axis mapping plus sensible velocity, acceleration and helper toggles for a common vehicle type. It's a starting point, everything stays editable afterwards, and some presets also set a matching default keybind layout.

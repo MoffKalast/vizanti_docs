@@ -2,7 +2,7 @@
 
 **Message types:** `nav_msgs/Path`, `geometry_msgs/PoseArray`
 
-Create missions with multiple waypoints, then send them as a Path or PoseArray message. Single tap to add a point, single tap to remove an existing one, hold and drag to move points. Adding a point on an existing line will add it between those two points. Long press to open setup menu.
+Create missions with multiple waypoints, then send them as a Path or PoseArray message. Single tap to add a point, single tap to remove an existing one, hold and drag to move points. Adding a point on an existing line will add it between those two points.
 
 The Waypoints widget is simpler than it might first appear. It lets you pick a fixed frame and define points relative to it, which are then turned into a `nav_msgs/Path` or `geometry_msgs/PoseArray` and published to a receiver topic. A node on the ROS side then needs to process and forward that path to your navigation stack of choice.
 
@@ -10,7 +10,7 @@ On the ROS 2 side, there are two example nodes for Nav2 in [vizanti_demos](https
 
 ![nav2 poses demo](assets/screenshots/nav2poses.gif)
 
-## General behaviour
+## Menu commands
 
 - <img src="assets/dropdown_start.svg" width="22"/> **Start** → sends the currently defined waypoints, the yaw rotation at each pointing towards the next one
 - <img src="assets/dropdown_stop.svg" width="22"/> **Stop** → sends an empty array, which the nav side can interpret as a handy abort

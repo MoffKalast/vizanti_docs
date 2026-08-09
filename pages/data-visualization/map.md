@@ -4,7 +4,7 @@
 
 Display an OccupancyGrid.
 
-It features the typical rviz render modes: Map, Costmap, Raw, as well as two extra Raw modes with black or white pixel transparency. Autodetects topics with "costmap" in their name and switch them to costmap rendering mode automatically.
+It features the typical rviz render modes: Map, Costmap, Raw, as well as three extra Raw modes with black or white pixel transparency and false colour HDR. Autodetects topics with "costmap" in their name and switch them to costmap rendering mode automatically.
 
 ![Nav2 demo](assets/screenshots/occupancy_grid.jpg)
 
@@ -26,3 +26,7 @@ FLS (raw with black transparency):
 
 FLS (raw):
 ![Render](assets/screenshots/oculus3.jpg)
+
+There is also an dedicated Sonar render mode, which stretches out the monochrome uint8 values across all three colour channels and removes pure black values, similar to standard sonar visualizers. It provides more visual information at a glance (and also happens to look very cool):
+
+<video controls width="800"><source src="assets/video/sonar.mp4" type="video/mp4">  Your browser does not support the video tag.</video>
