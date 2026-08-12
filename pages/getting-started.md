@@ -39,7 +39,7 @@ The web client is nearly identical across branches and kept up to date on both b
 
 | Setup                | Noetic (ROS&nbsp;1) | One (ROS&nbsp;1) | Humble (ROS&nbsp;2) | Jazzy (ROS&nbsp;2) | Lyrical (ROS&nbsp;2) |
 |----------------------|----------------|-------------|----------------|---------------|---------------|
-| Vizanti + Rosbridge  | 🟢             | 🟢          | 🟡             | 🟡            | 🟢             |
+| Vizanti + Rosbridge  | 🟢             | 🟢          | 🟡             | 🟡            | 🟡             |
 | Vizanti + RWS        | N/A            | N/A         | 🟢             | 🟢            | 🟥             |
 
 🟢 stable, all features should work
