@@ -1,15 +1,26 @@
 # Vizanti Documentation
 
-Static documentation site for [Vizanti](https://github.com/MoffKalast/vizanti), deployed with GitHub Pages. No build step — markdown pages are rendered client-side.
+Static documentation site for [Vizanti](https://github.com/MoffKalast/vizanti), deployed with GitHub Pages. Markdown pages are rendered client-side.
 
 _Except where otherwise noted, this documentation is licensed under the BSD 3-Clause License._
 
 ## Structure
 
-- `index.html` — the entire site shell (sidebar, styling, markdown rendering via marked.js, syntax highlighting via highlight.js)
-- `nav.js` — sidebar structure, the only file to touch when adding/reordering pages
-- `pages/*.md` — the content, plain GitHub-flavored markdown
-- `assets/` — icons and images from the Vizanti client, referenced as `assets/<name>.svg` from any page
+#### `index.html` 
+
+The entire site shell (sidebar, styling, markdown rendering via marked.js, syntax highlighting via highlight.js)
+
+#### `nav.js` 
+
+Sidebar structure, the only file to touch when adding/reordering pages
+
+#### `pages/*.md` 
+
+The content, plain GitHub-flavored markdown
+
+#### `assets/` 
+
+Icons and images from the Vizanti client, referenced as `assets/<name>.svg` from any page
 
 ## Adding a page
 

@@ -8,7 +8,7 @@ Most widget icons open their setup menus with a click, but some require a long p
 
 Make sure the browser didn't autocorrect your URL to `https://` instead of `http://` which won't get a response from the static serve in its default configuration. If that doesn't help, check if ufw is disabled on the host machine or the network isn't blocking port 5000 and 5001 from it through some other means. If you're using a mobile device connected to a robot's hotspot that doesn't have internet access, make sure to turn off mobile data. That should prevent any routing confusion.
 
-## Data is laggy, page keeps reloading, or adding a heavy widget makes everything else stutter
+## On lag/stuttering
 
 High bandwidth topics (point clouds, laser scans, images, occupancy grids) are sent over a single rosbridge socket, so one greedy subscriber can congest the link and starve every other widget. Each of these widgets has a **Socket throttle (ms)** field in its setup menu that caps how often it receives new data. Higher values mean less bandwidth usabe but lower update rates and vice versa.
 

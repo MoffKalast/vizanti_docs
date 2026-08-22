@@ -10,12 +10,12 @@ Joystick for publishing Twist (or TwistStamped) commands. It can be positioned a
 
 The **Apply preset** dropdown fills in the axis mapping plus sensible velocity, acceleration and helper toggles for a common vehicle type. It's a starting point, everything stays editable afterwards, and some presets also set a matching default keybind layout.
 
-- **Diffdrive** → `linear.x` / `angular.z`, with Ackermann emulation on
-- **Ackermann** → `linear.x` / `angular.z`
-- **Holonomic** → `linear.x` / `linear.y`, IJKL keybinds
-- **Altitude/Depth** → `linear.z`, space/shift keybinds
-- **Pitch/Roll** → `angular.y` / `angular.x`, instant stop on
-- **Pan/Tilt** → `angular.y` / `angular.z`, instant stop on
+- **Diffdrive**: `linear.x` / `angular.z`, with Ackermann emulation on
+- **Ackermann**: `linear.x` / `angular.z`
+- **Holonomic**: `linear.x` / `linear.y`, IJKL keybinds
+- **Altitude/Depth**: `linear.z`, space/shift keybinds
+- **Pitch/Roll**: `angular.y` / `angular.x`, instant stop on
+- **Pan/Tilt**: `angular.y` / `angular.z`, instant stop on
 
 Two joysticks can be set up at the same time, e.g. one for XY motion, one for Z motion, but note that if you use both at once the subscriber will see Twist messages from both, with each demanding zero on the other's axes. Some kind of merger node that ignores zeros on specific axes for specific topics would be recommended on the backend in this special case if you want perfect responsiveness at all times.
 

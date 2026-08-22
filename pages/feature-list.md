@@ -10,17 +10,17 @@ Aside from the required ones, custom widgets can be added to the navbar to custo
 
 | | Widget | Message Type | Summary |
 |---|--------|--------------|---------|
-| <img src="assets/settings.svg" width="30"/> | [Global Settings](general-tools/global-settings.md) | — | Set the background color and the fixed TF frame. Also has a button to reset the camera view to zero and default zoom. |
-| <img src="assets/rosbridge_connected.svg" width="30"/> | [Rosbridge](general-tools/rosbridge.md) | — | Shows the backend connection status. Green if a rosbridge compatible server is connected, yellow if attempting to reconnect, red if the connection has been lost. |
-| <img src="assets/grid.svg" width="30"/> | [Grid](general-tools/grid.md) | — | The adjustable metric grid. Currently renders only in the fixed frame. |
-| <img src="assets/tf.svg" width="30"/> | [TF](general-tools/tf.md) | — | Renders TF frames, same options as in RViz for the most part. |
-| <img src="assets/robotmodel.svg" width="30"/> | [Robot Model](general-tools/robot-model.md) | — | Renders a 2D sprite to represent the robot model or any specific TF link. |
-| <img src="assets/reconfigure.svg" width="30"/> | [Param Reconfigure](general-tools/param-reconfigure.md) | — | Adjust values of all nodes with reconfigurable parameters. Works through dynamic_reconfigure in Noetic, and standard node parameters in ROS 2. |
-| <img src="assets/rosbag.svg" width="30"/> | [Bag Recorder](general-tools/bag-recorder.md) | — | Records specified topics by calling `rosbag record` via proxy. |
-| <img src="assets/nodemgr.svg" width="30"/> | [Node Manager](general-tools/node-manager.md) | — | Launch nodes, kill nodes, see information about nodes and run other node debugging tools. |
-| <img src="assets/inspector.svg" width="30"/> | [Topic Inspector](general-tools/topic-inspector.md) | — | A raw text visualizer for topic data, and publisher/subscriber info analogous to `rostopic echo` and `rostopic info`. |
-| <img src="assets/folder.svg" width="30"/> | [Folder](general-tools/folder.md) | — | A way to group widgets together. |
-| <img src="assets/add.svg" width="30"/> | [Add New Visualizer/Widget](general-tools/add-widget.md) | — | Self explanatory. |
+| <img src="assets/settings.svg" width="30"/> | [Global Settings](general-tools/global-settings.md) | / | Set the background color and the fixed TF frame. Also has a button to reset the camera view to zero and default zoom. |
+| <img src="assets/rosbridge_connected.svg" width="30"/> | [Rosbridge](general-tools/rosbridge.md) | / | Shows the backend connection status. Green if a rosbridge compatible server is connected, yellow if attempting to reconnect, red if the connection has been lost. |
+| <img src="assets/grid.svg" width="30"/> | [Grid](general-tools/grid.md) | / | The adjustable metric grid. Currently renders only in the fixed frame. |
+| <img src="assets/tf.svg" width="30"/> | [TF](general-tools/tf.md) | / | Renders TF frames, same options as in RViz for the most part. |
+| <img src="assets/robotmodel.svg" width="30"/> | [Robot Model](general-tools/robot-model.md) | / | Renders a 2D sprite to represent the robot model or any specific TF link. |
+| <img src="assets/reconfigure.svg" width="30"/> | [Param Reconfigure](general-tools/param-reconfigure.md) | / | Adjust values of all nodes with reconfigurable parameters. Works through dynamic_reconfigure in Noetic, and standard node parameters in ROS 2. |
+| <img src="assets/rosbag.svg" width="30"/> | [Bag Recorder](general-tools/bag-recorder.md) | / | Records specified topics by calling `rosbag record` via proxy. |
+| <img src="assets/nodemgr.svg" width="30"/> | [Node Manager](general-tools/node-manager.md) | / | Launch nodes, kill nodes, see information about nodes and run other node debugging tools. |
+| <img src="assets/inspector.svg" width="30"/> | [Topic Inspector](general-tools/topic-inspector.md) | / | A raw text visualizer for topic data, and publisher/subscriber info analogous to `rostopic echo` and `rostopic info`. |
+| <img src="assets/folder.svg" width="30"/> | [Folder](general-tools/folder.md) | / | A way to group widgets together. |
+| <img src="assets/add.svg" width="30"/> | [Add New Visualizer/Widget](general-tools/add-widget.md) | / | Self explanatory. |
 
 ## Mission Planning
 

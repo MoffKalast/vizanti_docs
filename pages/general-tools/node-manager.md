@@ -12,9 +12,9 @@ Executable detection is best-effort, so not every file is guaranteed to show up,
 
 Every discovered node is listed and refreshed by polling, nodes with `vizanti` in their name are excluded to prevent accidental suicide. Click one to open its context view:
 
-- **Node info** — publishers, subscribers, services.
-- **Lifecycle status** — the current state for managed lifecycle nodes, ROS 2 only.
-- **Kill node** — terminates the node after a confirmation. Uses rosnode kill under ROS 1, and some pkill shenanigans under ROS 2 that try to locate the right process based on its name since there's no standard counterpart. If a node is configured to respawn it will keep coming back and there is no escape.
+- **Node info**: publishers, subscribers, services.
+- **Lifecycle status**: the current state for managed lifecycle nodes, ROS 2 only.
+- **Kill node**: terminates the node after a confirmation. Uses rosnode kill under ROS 1, and some pkill shenanigans under ROS 2 that try to locate the right process based on its name since there's no standard counterpart. If a node is configured to respawn it will keep coming back and there is no escape.
 
 ## Diagnostics
 

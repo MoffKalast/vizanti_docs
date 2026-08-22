@@ -275,7 +275,7 @@ function pageNavHtml(id) {
 async function loadPage() {
 	const id = currentPageId();
 	const page = flatPages.find(p => p.id === id);
-	document.title = `${page.title} — ${SITE_TITLE}`;
+	document.title = `${page.title} • ${SITE_TITLE}`;
 	sidebar.querySelectorAll("a.page").forEach(a => a.classList.toggle("active", a.dataset.id === id));
 	sidebar.classList.remove("open");
 	try {

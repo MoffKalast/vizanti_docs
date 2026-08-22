@@ -10,13 +10,13 @@ Display satellite imagery, by default from OpenStreetMap. Requires a NavSatFix o
 
 ## About Projections
 
-A `NavSatFix` message gives us a geodetic position: latitude, longitude and altitude on the WGS84 ellipsoid, plus a covariance estimate and a fix status. That's a position on a curved surface in angular units — ROS on the other hand works in flat, metric, right-handed cartesian frames, so the two need to be reconciled before GNSS data is of any use to the TF tree.
+A `NavSatFix` message gives us a geodetic position: latitude, longitude and altitude on the WGS84 ellipsoid, plus a covariance estimate and a fix status. ROS on the other hand works in flat, metric, right-handed cartesian frames, so the two need to be reconciled before GNSS data is of any use to the TF tree.
 
 The standard way to do that (see [REP-105](https://www.ros.org/reps/rep-0105.html)) is:
 
-1. Pick an **origin** — a reference lat/lon/alt, usually the first valid fix or a manually surveyed point.
-2. Convert geodetic coordinates to **ECEF** (Earth-Centered, Earth-Fixed), a cartesian frame with its origin at the Earth's center, X through the prime meridian, Z through the north pole (see figure above).
-3. Rotate and translate ECEF into a **local tangent plane** anchored at the origin — a flat plane touching the ellipsoid at that point. With the axes ordered East, North, Up you get **ENU**, which is exactly the ROS convention (X=east, Y=north, Z=up when the map frame is globally aligned).
+1. Pick an origin, a reference lat/lon/alt, usually the first valid fix or a manually surveyed point.
+2. Convert geodetic coordinates to ECEF (Earth-Centered, Earth-Fixed), a cartesian frame with its origin at the Earth's center, X through the prime meridian, Z through the north pole (see figure above).
+3. Rotate and translate ECEF into a local tangent plane anchored at the origin. With the axes ordered East, North, Up you get ENU, which is exactly the ROS convention (X=east, Y=north, Z=up when the map frame is globally aligned).
 
 ![ENU projection](assets/screenshots/enu.jpg)
 
@@ -40,7 +40,7 @@ The ENU tangent plane is anchored at the coordinate and altitude of the latest r
 
 There are two main approaches: relative to a receiver frame, and relative to a local origin.
 
-### 1. Basic — Relative to a GNSS receiver
+### 1. Relative to a GNSS receiver (Basic)
 
 Most receiver drivers (i.e. nmea_navsat and ublox) will publish a NavSatFix relative to their receiver frame, e.g. `gps_link`, in which case the satellite tiles can be rendered directly relative to it, assuming your robot URDF has a transform to that link.
 
@@ -50,14 +50,14 @@ There are some problems with this approach however:
 - The tiles may jump around a bit as the fix and robot TF position changes, and they tend to be a bit out of sync unless you're operating directly from GNSS data only.
 - Your robot needs to have a globally correct yaw rotation for the map to be oriented correctly.
 
-### 2. Recommended — Relative to a local origin
+### 2. Relative to a local origin (Recommended)
 
 As mentioned above, the standard way of doing things is to set up a local origin and transform the Lat/Lon NavSatFix data into zero-relative metric Odometry as described in the background section above. Conceptually:
 
 - take a manually picked NavSatFix, or the first valid fix as your origin, and generate ENU transformed TF/Odometry relative to it
 - change that NavSatFix's `header.frame_id` to correspond to the TF link (e.g. `world` or `local`) that you want to use as your origin (the parent frame of the GNSS Odometry)
 - latch and publish it on a new topic, so the widget and other nodes can reference it
-- subscribe the widget to that topic — since the origin fix never changes, the tiles are static and pinned to your origin frame
+- subscribe the widget to that topic (since the origin fix never changes, the tiles are static and pinned to your origin frame)
 
 ### Matching the backend projection
 
@@ -83,12 +83,23 @@ lon, lat, alt = enu_transformer.transform(east, north, up, direction=TransformDi
 
 ## Pitfalls
 
-- **Match the altitude of both projections.** The widget anchors its ENU plane at the fix it receives, including altitude. If your backend zeroes out the Z axis, then that should also be applied to the NavSatFix given as the origin, otherwise the two ENU frames are subtly offset.
-- **Altitude matters.** Projecting from a different ellipsoidal height scales the whole tangent plane by roughly `h/R` — about 16 cm per km of distance for a 1000 m altitude mismatch. Note that NavSatFix altitude is ellipsoidal (WGS84), not MSL, though some drivers get this wrong.
-- **Fix status.** Messages with `status: -1` (no fix) or NaN coordinates are ignored. Some drivers (e.g. mavros) report an invalid status even with a valid fix — fix that on the backend before republishing.
-- **Web Mercator range.** Tiles only exist between roughly ±85.05° latitude; the widget wraps horizontally across the antimeridian but there is no imagery for the poles. Apologies to all Artic and Antarctic roboticists.
-- **Slippy map zoom availability.** The renderer assumes zoom levels up to 19 will be possible to fetch, which may not be the case for all tile servers or in all areas. E.g. Google Maps does not provide zoom levels over 10 in the middle of the Atlantic.
-- **UTM.** UTM is not recommended in general: the coordinates are large, the distortions are location dependent. Note that northing and eastings are also not technically cartesian either, as the directions change continiously to point towards north, so it doesn't really work with ROS consistently.
+### Match the altitude of both projections
+
+The widget anchors its ENU plane at the fix it receives, including altitude. If your backend zeroes out the Z axis, then that should also be applied to the NavSatFix given as the origin, otherwise the two ENU frames are subtly offset. Shouldn't matter in most cases though, projecting from a different ellipsoidal height scales the whole tangent plane by roughly `delta_height/earth_radius` or about 16 cm per km of distance for a 1000 m altitude mismatch. 
+
+### Fix status
+
+Messages with `status: -1` (no fix) or NaN coordinates are ignored. Some drivers (e.g. mavros) report an invalid status even with a valid fix, and that ought to be fixed on the driver side.
+
+### Tile availability
+
+Tiles for Web Mercator only exist between roughly ±85.05° latitude. The widget wraps horizontally across the antimeridian but there is no imagery for the poles. Apologies to all Artic and Antarctic roboticists.
+
+Within that range the renderer assumes zoom levels up to 19 will be possible to fetch, which may not be the case for all tile servers or in all areas. E.g. Google Maps does not provide zoom levels over 10 in the middle of the Atlantic.
+
+#### UTM
+
+UTM is generally not recommended. The coordinates are large, the distortions are location dependent. Note that northing and eastings are also not technically cartesian either, as the directions change continiously to point towards north, so it doesn't really work with ROS consistently.
 
 More info:
 

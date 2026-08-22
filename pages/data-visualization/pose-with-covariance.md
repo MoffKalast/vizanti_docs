@@ -6,5 +6,5 @@ Renders a single pose together with its uncertainty. Typical sources are an AMCL
 
 ## Render modes
 
-- **Long Arrow** — position plus a heading arrow
-- **Axes** — an XYZ axis marker at the pose
+- **Long Arrow**: position plus a heading arrow
+- **Axes**: an XYZ axis marker at the pose

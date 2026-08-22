@@ -14,9 +14,10 @@ The project is open-source source and BSD licensed, so feel free to contribute a
 
 Initially designed as a field tool for marine robotics, Vizanti is equipped to operate with or without internet access, and as such the most practical way is often to host it on the robot itself and connect mobile or desktop devices to it over wifi, no DDS or ros_comm linking required.
 
-- **[Getting Started](getting-started.md)** — installation and first steps
-- **[Feature List](feature-list.md)** — every widget at a glance
-- **[Tips & FAQ](faq.md)** — common usage and setup questions
+- **[Getting Started](getting-started.md)**
+- **[Feature List](feature-list.md)**
+- **[Tips & FAQ](faq.md)**
+
 
 ![Vizanti preview](assets/screenshots/asv_ui_demo.jpg)
 

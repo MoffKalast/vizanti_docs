@@ -10,8 +10,8 @@ An analogue to the Odometry widget in RViz that renders the history of a pose as
 
 Two things gate how points get recorded:
 
-- **Sample delay (ms)** — how often the current pose is polled.
-- **Minimum distance** — a new point is only appended if it's moved more than 3 cm from the previous one, so a stationary robot doesn't pile up thousands of identical samples.
+- **Sample delay (ms)**: how often the current pose is polled.
+- **Minimum distance**: a new point is only appended if it's moved more than 3 cm from the previous one, so a stationary robot doesn't pile up thousands of identical samples.
 
 **History (N)** caps how many points are kept, the oldest are dropped once the limit is reached. **Draw path** and **Draw arrows** toggle the line and the heading arrows.
 
