@@ -6,10 +6,11 @@ Displays a Temperature reading. The setup menu shows the value, its variance, an
 
 ## High / Low thresholds
 
-Two thresholds drive the indicator icon:
+The indicator icon changes to reflect the received value based on defined thresholds: 
 
-- above **High** (default 60 °C) → hot icon
-- below **Low** (default 20 °C) → cold icon
-- anything in between → warm icon
+- <img src="assets/temp_hot.svg" width="30"/> above High value (default 60 °C)
+- <img src="assets/temp_cold.svg" width="30"/> below Low value (default 20 °C)
+- <img src="assets/temp_warm.svg" width="30"/> anything in between
+- <img src="assets/temp_unknown.svg" width="30"/> no message received yet
 
-They're just display thresholds for at-a-glance status, set them to whatever "too hot" and "too cold" mean for the thing you're monitoring. The update rate is fixed at 500 ms.
+The update rate is fixed at 500 ms.
