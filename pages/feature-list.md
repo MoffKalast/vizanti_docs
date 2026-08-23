@@ -19,6 +19,7 @@ Aside from the required ones, custom widgets can be added to the navbar to custo
 | <img src="assets/rosbag.svg" width="30"/> | [Bag Recorder](general-tools/bag-recorder.md) | / | Records specified topics by calling `rosbag record` via proxy. |
 | <img src="assets/nodemgr.svg" width="30"/> | [Node Manager](general-tools/node-manager.md) | / | Launch nodes, kill nodes, see information about nodes and run other node debugging tools. |
 | <img src="assets/inspector.svg" width="30"/> | [Topic Inspector](general-tools/topic-inspector.md) | / | A raw text visualizer for topic data, and publisher/subscriber info analogous to `rostopic echo` and `rostopic info`. |
+| <img src="assets/diagnostics.svg" width="30"/> | [Diagnostics](general-tools/diagnostics.md) | `diagnostic_msgs/DiagnosticsArray` `rosgraph_msgs/Log` `rcl_interfaces/Log` | Similar to the topic inspector, but specialized for viewing key/value pairs of DiagnosticArray and rosout. |
 | <img src="assets/folder.svg" width="30"/> | [Folder](general-tools/folder.md) | / | A way to group widgets together. |
 | <img src="assets/add.svg" width="30"/> | [Add New Visualizer/Widget](general-tools/add-widget.md) | / | Self explanatory. |
 
@@ -26,12 +27,14 @@ Aside from the required ones, custom widgets can be added to the navbar to custo
 
 Widgets for commanding the robot: teleoperation, goals, and mission definition.
 
+
 | | Widget | Message Type | Summary |
 |---|--------|--------------|---------|
 | <img src="assets/joystick.svg" width="30"/> | [Teleop Joystick](mission-planning/teleop-joystick.md) | `geometry_msgs/Twist` | Joystick used for publishing Twist messages, can be positioned anywhere on the screen and switched into holonomic mode. |
 | <img src="assets/initialpose.svg" width="30"/> | [2D Pose Estimate](mission-planning/pose-estimate.md) | `geometry_msgs/PoseWithCovarianceStamped` | Send the `/initialpose` for navigation startup. Long press to open setup menu. |
 | <img src="assets/simplegoal.svg" width="30"/> | [2D Nav Goal](mission-planning/nav-goal.md) | `geometry_msgs/PoseStamped` | Send a `/move_base_simple/goal`. Long press to open setup menu. |
 | <img src="assets/waypoints.svg" width="30"/> | [Waypoint Mission](mission-planning/waypoints.md) | `nav_msgs/Path` `geometry_msgs/PoseArray` | Create missions with multiple waypoints, then send them as a Path or PoseArray message. Single tap to add a point, single tap to remove an existing one, hold and drag to move points. Adding a point on an existing line will add it between those two points. Long press to open setup menu. |
+| <img src="assets/survey.svg" width="30"/> | [Survey Mission](mission-planning/survey.md) | `nav_msgs/Path` `geometry_msgs/PoseArray` | Define an arbitrary polygon of an area to systematically survey, and the widget will run a solver to generate a lawnmower waypoint mission according to the given parameters and the defined start and end points. |
 | <img src="assets/area.svg" width="30"/> | [Area Mission](mission-planning/area-mission.md) | `geometry_msgs/PolygonStamped` | Drag to select an area and publish it to a PolygonStamped topic. Since the area is a rectangle, the first polygon vertex will be at the cursor press, and the third vertex will be the press released point. Long press to open setup menu. |
 | <img src="assets/button.svg" width="30"/> | [Button](mission-planning/button.md) | `std_msgs/Bool` `std_msgs/Empty` | A button with customizable text that displays the last message sent on a Bool topic and sends the inverse to toggle it when pressed. Also supports just sending messages to an Empty topic. Long press to open setup menu. |
 | <img src="assets/altimeter_green.svg" width="30"/> <img src="assets/altimeter.svg" width="30"/> | [Altimeter](mission-planning/altimeter.md) | `std_msgs/Float32` | A side indicator that renders the Z value of a TF frame as depth/altitude depending on mode. Clicking the altimeter will publish a metric value as a Float32 value to the selected topic, so it can be used for marking a target depth/altitude. A yellow indicator arrow will display the last valid value received on the target topic. |
