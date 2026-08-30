@@ -81,6 +81,8 @@ east, north, up = enu_transformer.transform(lon, lat, alt)
 lon, lat, alt = enu_transformer.transform(east, north, up, direction=TransformDirection.INVERSE)
 ```
 
+> Note that even with RTK where your localization error is pretty much zero and the ENU projection itself matches completely, the registration of satellite imagery to the WGS84 ellipsoid can have up to ~12 m of orthorectification error. It varies wildly by location and over time (tectonic plates themselves move old tiles out of alignment at a noticeable rate), though typically it's under 2 m. See https://arxiv.org/pdf/2205.01969
+
 ## Pitfalls
 
 ### Match the altitude of both projections
